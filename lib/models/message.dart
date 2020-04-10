@@ -30,8 +30,8 @@ class Message {
   static User alin = User(id: 6, name: "alin", imageUrl: "assets/images/3.jpg");
   static User lina = User(id: 7, name: "lina", imageUrl: "assets/images/4.jpg");
 
-  List<User> favorit = [ali, sofia, sultan, lina];
-  List<Message> chat = [
+  List<User> favorites = [ali, sofia, sultan, lina];
+  List<Message> messages = [
     Message(
         sender: ali,
         time: "06:30 PM",

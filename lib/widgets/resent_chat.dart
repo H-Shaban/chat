@@ -21,9 +21,9 @@ class _ResentChatState extends State<ResentChat> {
           ),
         ),
         child: ListView.builder(
-          itemCount: msg.chat.length,
+          itemCount: msg.messages.length,
           itemBuilder: (BuildContext context, int index) {
-            final chat = msg.chat[index];
+            final chat = msg.messages[index];
             return Container(
               margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
               padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),

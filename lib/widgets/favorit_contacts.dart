@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:chat/models/message.dart';
 
 class FavoritContacts extends StatelessWidget {
-  var favorit = Message().favorit;
+  var favorite = Message().favorites;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,7 +35,7 @@ class FavoritContacts extends StatelessWidget {
             padding: EdgeInsets.only(left: 10.0),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: favorit.length,
+              itemCount: favorite.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: EdgeInsets.only(left: 10.0),
@@ -43,13 +43,13 @@ class FavoritContacts extends StatelessWidget {
                     children: <Widget>[
                       CircleAvatar(
                         radius: 35.0,
-                        backgroundImage: AssetImage(favorit[index].imageUrl),
+                        backgroundImage: AssetImage(favorite[index].imageUrl),
                       ),
                       SizedBox(
                         height: 6.0,
                       ),
                       Text(
-                        favorit[index].name,
+                        favorite[index].name,
                         style: TextStyle(
                           color: Colors.blueGrey,
                           fontSize: 16.0,
