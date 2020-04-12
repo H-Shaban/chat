@@ -1,5 +1,5 @@
 import 'package:chat/widgets/category_selector.dart';
-import 'package:chat/widgets/favorit_contacts.dart';
+import 'package:chat/widgets/favorites_contacts.dart';
 import 'package:chat/widgets/resent_chat.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
               ),
               child: Column(
                 children: <Widget>[
-                  FavoritContacts(),
+                  FavoritesContacts(),
                   ResentChat(),
                 ],
               ),

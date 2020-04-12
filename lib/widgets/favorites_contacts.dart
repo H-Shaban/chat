@@ -1,8 +1,8 @@
+import 'package:chat/views/chat.dart';
 import 'package:flutter/material.dart';
 import 'package:chat/models/message.dart';
 
-class FavoritContacts extends StatelessWidget {
-  var favorite = Message().favorites;
+class FavoritesContacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,28 +35,36 @@ class FavoritContacts extends StatelessWidget {
             padding: EdgeInsets.only(left: 10.0),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: favorite.length,
+              itemCount: favorites.length,
               itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: EdgeInsets.only(left: 10.0),
-                  child: Column(
-                    children: <Widget>[
-                      CircleAvatar(
-                        radius: 35.0,
-                        backgroundImage: AssetImage(favorite[index].imageUrl),
-                      ),
-                      SizedBox(
-                        height: 6.0,
-                      ),
-                      Text(
-                        favorite[index].name,
-                        style: TextStyle(
-                          color: Colors.blueGrey,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w600
+                return GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => Chat(user: favorites[index]),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Column(
+                      children: <Widget>[
+                        CircleAvatar(
+                          radius: 35.0,
+                          backgroundImage:
+                              AssetImage(favorites[index].imageUrl),
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          height: 6.0,
+                        ),
+                        Text(
+                          favorites[index].name,
+                          style: TextStyle(
+                              color: Colors.blueGrey,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
